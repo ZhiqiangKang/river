@@ -1,0 +1,24 @@
+{
+  "sql":"",
+  "srcTable":"ime.rpt_uc_month",
+  "destTable":"test:rpt_uc_month",
+  "key":"id",
+  "fields": [
+    {
+      "name":"id",
+      "newName":"id",
+      "newType":"string"
+    },
+    {
+      "name":"month",
+      "datePattern":"yyyy-MM",
+      "newName":"month_new",
+      "newDatePattern":"yyyy^MM",
+      "newType":"string"
+    },
+    {
+      "name":"clk_user_cnt",
+      "newType":"long"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+spark-warehouse/
+.project
+.settings/
+.classpath
+*.iml
+metastore_db/
+*.log
+.DS_Store
+.idea/
+dependency-reduced-pom.xml
+lib/
+target/
+log/
+spark-recommend-model.iml
+*.ipr
+*.iws
