@@ -25,7 +25,7 @@ River是一个用于将Hive数据同步至HBase或Redis的工具。
 
 进入项目根目录，使用maven打包：
 
-```
+```bash
 # <profile_id> 可选，不指定-P<profile_id>，默认dev：
 #   dev     开发模式，会将依赖的Spark、Hadoop、Hive、HBase相关jar包打包
 #   prod    生产模式，不会将依赖的Spark、Hadoop、Hive、HBase相关jar包打包
@@ -42,13 +42,13 @@ mvn clean package -DskipTests -P<profile_id>
 
 命令如下：
 
-```
+```bash
 spark-submit --master yarn river-1.0-SNAPSHOT.jar <arg1> <arg2> <arg3>
 ```
 
 #### 2.4.2 应用程序参数
 
-```
+```text
 Usage: <arg1> <arg2> <arg3>
        arg1 - 指定数据库类型。可选：redis|hbase。必传
        arg2 - 表字段配置文件路径。必传
@@ -99,7 +99,7 @@ Usage: <arg1> <arg2> <arg3>
 
 + redis配置文件
 
-```
+```properties
 # Redis Server IP地址。默认localhost
 redis.host=172.16.117.61
 # Redis Server 端口。默认6379
