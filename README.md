@@ -9,8 +9,8 @@ River是一个用于将Hive数据同步至HBase或Redis的工具。
 ### 2.1 环境准备
 
 + Java: JDK7及以上
-+ Scala: Scala2.11及以上
-+ Spark: Spark2.3.*
++ Scala: 2.11及以上
++ Spark: 2.3.*
 + Hadoop: 2.6.0-cdh5.15.0
 + Hive: 1.1.0-cdh5.15.0
 + HBase: 1.2.0-cdh5.15.0
@@ -28,7 +28,7 @@ River是一个用于将Hive数据同步至HBase或Redis的工具。
 ```bash
 # <profile_id> 可选，不指定-P<profile_id>，默认dev：
 #   dev     开发模式，会将依赖的Spark、Hadoop、Hive、HBase相关jar包打包
-#   prod    生产模式，不会将依赖的Spark、Hadoop、Hive、HBase相关jar包打包
+#   release 发布模式，不会将依赖的Spark、Hadoop、Hive、HBase相关jar包打包
 mvn clean package -DskipTests -P<profile_id>
 ```
 
