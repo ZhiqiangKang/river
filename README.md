@@ -92,9 +92,9 @@ Usage: <arg1> <arg2> <arg3>
 > key: 指定使用Hive中的哪一列作为HBase的row或Redis的key<br/>
 > fields: 描述具体的字段信息<br/>
 > name: 该字段在Hive表中的名称<br/>
-> datePattern: 该字段在Hive中若是以字符串格式存储的日期，在目的表中需要以新的格式存储，则指定该字段在Hive中存储的格式。默认:yyyy-MM-dd HH:mm:ss 
+> datePattern: 该字段在Hive中若是以字符串格式存储的日期，在目的表中需要以新的格式存储，则指定该字段在Hive中存储的格式。默认:yyyy-MM-dd HH:mm:ss <br/>
 > newName: 指定该字段在目的表中的新名称。若不指定，则取name<br/>
-> newDatePattern: 指定在Hive中以日期(或字符串格式的日期)类型存储的字段，在目的表中需要转换的新格式。
+> newDatePattern: 指定在Hive中以日期(或字符串格式的日期)类型存储的字段，在目的表中需要转换的新格式<br/>
 > newType: 指定该字段在目的表中的新类型。若不指定，则与Hive中的类型相对应<br/>
 
 + redis配置文件
