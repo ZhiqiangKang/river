@@ -64,7 +64,7 @@ Usage: <arg1> <arg2> <arg3>
   "sql":"",
   "srcTable":"ime.rpt_uc_month",
   "destTable":"test:rpt_uc_month",
-  "key":"id",
+  "key":"key_${id}",
   "fields": [
     {
       "name":"id",
@@ -89,7 +89,7 @@ Usage: <arg1> <arg2> <arg3>
 > sql: 指定源数据查询SQL。程序会执行该SQL语句，将执行结果集作为源数据<br/>
 > srcTable: 指定源数据表。程序会将该表中的全部数据作为源数据。若sql项已配置，则忽略本项<br/>
 > destTable: 指定结果数据表。如果要将数据同步至HBase，则需现在HBase中手动创建该表。如果要将数据同步至Redis，则该项则作为key的前缀，以:作为结尾进行拼接<br/>
-> key: 指定使用Hive中的哪一列作为HBase的row或Redis的key<br/>
+> key: 指定HBase的row或Redis的生成规则，使用${<field>}来引用Hive中的字段。注：引用的字段需包含于fields中<br/>
 > fields: 描述具体的字段信息<br/>
 > name: 该字段在Hive表中的名称<br/>
 > datePattern: 该字段在Hive中若是以字符串格式存储的日期，在目的表中需要以新的格式存储，则指定该字段在Hive中存储的格式。默认:yyyy-MM-dd HH:mm:ss <br/>

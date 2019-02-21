@@ -1,11 +1,13 @@
 package com.xiwei.river.vo;
 
+import com.google.common.collect.Maps;
 import com.xiwei.river.util.JsonUtil;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class TableInfo {
 
@@ -14,6 +16,7 @@ public class TableInfo {
     private String destTable;
     private String key;
     private List<FieldInfo> fields;
+    private Map<String, FieldInfo> fieldInfoMap;
 
     /**
      * 读取JSON配置文件并转换为TableInfo对象
@@ -26,6 +29,19 @@ public class TableInfo {
         TableInfo tableInfo = JsonUtil.toObject(fileContent, TableInfo.class);
 
         return tableInfo;
+    }
+
+    public Map<String, FieldInfo> getFieldInfoMap(){
+        if (fields == null) return null;
+
+        if (fieldInfoMap == null){
+            fieldInfoMap = Maps.newHashMap();
+            for (FieldInfo fieldInfo : fields) {
+                fieldInfoMap.put(fieldInfo.getName(), fieldInfo);
+            }
+        }
+
+        return fieldInfoMap;
     }
 
     public String getSql() {

@@ -2,7 +2,7 @@
   "sql":"",
   "srcTable":"ime.rpt_uc_month",
   "destTable":"test:rpt_uc_month",
-  "key":"id",
+  "key":"key_${id}",
   "fields": [
     {
       "name":"id",
